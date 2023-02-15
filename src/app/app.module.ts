@@ -11,6 +11,7 @@ import { ElencoMacchineComponent } from './components/elenco-macchine/elenco-mac
 import { MacchinaComponent } from './components/macchina/macchina.component';
 import { HomeComponent } from './components/home/home.component';
 import { DettaglioMacchinaComponent } from './components/dettaglio-macchina/dettaglio-macchina.component';
+import { MacchinaService } from './services/macchine.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { DettaglioMacchinaComponent } from './components/dettaglio-macchina/dett
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MacchinaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
