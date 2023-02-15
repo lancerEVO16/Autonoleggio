@@ -7,7 +7,7 @@ export class MacchinaService {
     private flotta : Macchina[] = [
         new Macchina(1, "Alfa Romeo", "Giulietta", "Berlina", 80, ["sedili sportivi"], "alfa-giuletta-berlina-80.png" ),
         new Macchina(2, "Audi", "A5", "Berlina", 110, ["cambio automatico", "sedili riscaldati"], "audi-a5-berlina-110.png" ),
-        new Macchina(3, "Audi", "A7", "Berlina", 170, ["cambio automatico", "seili riscaldati", "sedili in pelle"], "audi-a7-berlina-170.png" ),
+        new Macchina(3, "Audi", "A7", "Berlina", 170, ["cambio automatico", "sedili riscaldati", "sedili in pelle"], "audi-a7-berlina-170.png" ),
         new Macchina(4, "BMW", "5", "Berlina", 120, ["sedili riscaldati", "tettuccio panoramico"], "bmw-5-berlina-120.png" ),
         new Macchina(5, "BMW", "840i", "Cabrio", 250, ["tettuccio automatico", "cambio automatico", "Apple Car Play"], "bmw-840i-cabrio-250.png" ),
         new Macchina(6, "BMW", "X1", "SUV", 100, ["sedili in pelle"], "bmw-x1-suv-100.png" ),
