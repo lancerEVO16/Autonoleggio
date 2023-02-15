@@ -1,0 +1,7 @@
+div.card {
+    background: transparent;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+}

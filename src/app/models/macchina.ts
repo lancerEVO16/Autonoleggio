@@ -1,3 +1,5 @@
+import { MacchinaService } from "../services/macchine.service";
+
 export class Macchina{
     constructor(
         public id : number,
