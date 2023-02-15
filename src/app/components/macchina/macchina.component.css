@@ -5,3 +5,7 @@ div.card {
     border-color: rgb(0, 0, 0);
     border-radius: 0.5rem;
 }
+
+th.inBasso{
+    padding-top: 35%;
+}
