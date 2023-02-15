@@ -11,7 +11,9 @@ import { Macchina } from 'src/app/models/macchina';
 
 export class MacchinaComponent {
   @Input() macchina? : Macchina;
-  imageSrc: string = "/assets/Img/" + (this.macchina?.immagine ? this.macchina.immagine : "vuoto");
+  imageSrc:string;
   constructor(private router: Router) { 
+    this.imageSrc = "/assets/Img/" + (this.macchina?.immagine ? this.macchina.immagine : "vuoto");
+    console.log(this.macchina);
   }
 }
