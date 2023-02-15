@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 export class MacchinaService {
 
     private flotta : Macchina[] = [
-        new Macchina(1, "Alfa Romeo", "Giulietta", "Berlina", 80, ["sedili sportivi"], "" ),
+        new Macchina(1, "Alfa Romeo", "Giulietta", "Berlina", 80, ["sedili sportivi"], "alfa-giuletta-berlina-80.png" ),
         new Macchina(2, "Audi", "A5", "Berlina", 110, ["cambio automatico", "sedili riscaldati"], "" ),
         new Macchina(3, "Audi", "A7", "Berlina", 170, ["cambio automatico", "seili riscaldati", "sedili in pelle"], "" ),
         new Macchina(4, "BMW", "5", "Berlina", 120, ["sedili riscaldati", "tettuccio panoramico"], "" ),
