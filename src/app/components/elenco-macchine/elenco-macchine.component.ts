@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output ,EventEmitter } from '@angular/core';
 import { Macchina } from 'src/app/models/macchina';
 import { MacchinaService } from 'src/app/services/macchine.service';
 
@@ -9,7 +9,13 @@ import { MacchinaService } from 'src/app/services/macchine.service';
 })
 export class ElencoMacchineComponent {
   macchine: Macchina[] = [];
+  costruttori: string[] = [];
+
   constructor(private service: MacchinaService) {
     this.macchine = this.service.GetAll();
+    this.costruttori = this.service.GetBrands();
   }
+
+  Search(valore: string) { this.service.Search(valore); }
+
 }

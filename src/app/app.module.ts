@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DettaglioMacchinaComponent } from './components/dettaglio-macchina/dettaglio-macchina.component';
 import { MacchinaService } from './services/macchine.service';
 import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
+import { BarraRicercaComponent } from './components/barra-ricerca/barra-ricerca.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
     MacchinaComponent,
     HomeComponent,
     DettaglioMacchinaComponent,
-    ChiSiamoComponent
+    ChiSiamoComponent,
+    BarraRicercaComponent
   ],
   imports: [
     BrowserModule,

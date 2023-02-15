@@ -1,4 +1,4 @@
-div.card {
+/* div.card {
     background: transparent;
     border-style: solid;
     border-width: 1px 1px 1px 1px;
@@ -8,4 +8,11 @@ div.card {
 
 th.inBasso{
     padding-top: 35%;
+} */
+h4{
+    font-size: 22px;
+}
+
+h5, h6{
+    font-size: 16px;
 }

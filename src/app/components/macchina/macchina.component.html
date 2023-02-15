@@ -1,12 +1,14 @@
-<div class="card" style="max-width: 33.33% ">
+<!-- <div class="card">
     <table>
         <thead>
             <tr>
-                <th style="width: 33.33%"><div><img [src]="'../../../assets/Img/' + macchina?.immagine" alt="..."></div></th>
+                <th>
+                    <div><img class="img-fluid" [src]="'../../../assets/Img/' + macchina?.immagine" alt="..."></div>
+                </th>
                 <th>
                     <div>
                         <div>
-                            <div class="card-body width: 33.33%">
+                            <div class="card-body">
                                 <h3 class="card-title"> {{macchina?.costruttore}}</h3>
                                 <h3 class="card-title"> {{macchina?.modello}}</h3>
                                 <p class="card-text">{{macchina?.tipologia}}</p>
@@ -18,4 +20,29 @@
             </tr>
         </thead>
     </table>
+</div> -->
+
+
+<div class="card">
+    <div class="card-body row mx-0">
+        <div class="col-7">
+            <img class="img-fluid" [src]="'../../../assets/Img/' + macchina?.immagine" alt="...">
+        </div>
+        <div class="col-5">
+            <div class="row">
+                <h4 class="card-title">{{macchina?.costruttore}}</h4>
+            </div>
+            <div class="row">
+                <h5 class="card-title text-muted">{{macchina?.modello}}</h5>
+            </div>
+            <div class="row">
+                <h6 class="card-title text-muted">{{macchina?.tipologia}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-end">
+                {{macchina?.prezzo | currency}}
+            </div>
+        </div>
+    </div>
 </div>
