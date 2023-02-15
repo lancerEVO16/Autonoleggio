@@ -7,6 +7,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DataAnalysisComponent } from './components/data-analysis/data-analysis.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ElencoMacchineComponent } from './components/elenco-macchine/elenco-macchine.component';
+import { MacchinaComponent } from './components/macchina/macchina.component';
+import { HomeComponent } from './components/home/home.component';
+import { DettaglioMacchinaComponent } from './components/dettaglio-macchina/dettaglio-macchina.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavBarComponent,
     FooterComponent,
     DataAnalysisComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ElencoMacchineComponent,
+    MacchinaComponent,
+    HomeComponent,
+    DettaglioMacchinaComponent
   ],
   imports: [
     BrowserModule,
