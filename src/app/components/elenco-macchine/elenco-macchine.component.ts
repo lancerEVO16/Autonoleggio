@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Macchina } from 'src/app/models/macchina';
+import { MacchinaService } from 'src/app/services/macchine.service';
 
 @Component({
   selector: 'app-elenco-macchine',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./elenco-macchine.component.css']
 })
 export class ElencoMacchineComponent {
-
+  macchine: Macchina[] = [];
+  constructor(private service: MacchinaService) {
+    this.macchine = this.service.GetAll();
+  }
 }
