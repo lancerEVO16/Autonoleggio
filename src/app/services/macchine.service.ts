@@ -30,37 +30,26 @@ export class MacchinaService {
         return unique;
     }
 
-    // private filter = {
-    //     alfa: false,
-    //     bmw: false,
-    //     fiat: false
-    // }
-    // filteredProduct: Macchina[] = [];
-    // FilterChange() {
-    //     this.filteredProduct = this.flotta.filter(x =>
-    //         (x.costruttore == 'alfa' && this.filter.alfa)
-    //         || (x.costruttore == 'bmw' && this.filter.bmw)
-    //         || (x.costruttore == 'fiat' && this.filter.fiat)
-    //     );
-    // }
 
-    visualizzare: string[] = [];
-
-    Search(valore: string): Macchina[] {
-        console.log("search " + valore);
-        this.visualizzare.push(valore);
-        console.log("array di ricerca " + this.visualizzare);
-        console.log(this.flotta.filter(l => {
-            for (let i = 0; i < this.visualizzare.length; i++) {
-                if(l.costruttore === this.visualizzare[i]) 
-                {
-                    console.log(l.costruttore);
-                }
-            }
-        }));
-        return this.flotta.filter(l => l.costruttore.includes(valore));
+    Search(oggetto: {value: string, index: boolean}[]): Macchina[] {
+        console.log(oggetto.filter(x => x.index));
+        let filtro = oggetto.filter(x => x.index);
+        if (filtro.length === 0) return this.flotta;
+        let display = this.flotta.filter(x => {
+            let ret = false;
+            filtro.forEach(g => {
+                if (x.costruttore === g.value) ret = true;
+            })
+            return ret;
+        })
+        console.log(display);
+        return display;
     }
+
     GetById(id: number): Macchina {
-        return this.flotta[id-1];
+        return this.flotta[id - 1];
+    }
+    CreaMacchina(marca: string, modello: string, tipologia: string, prezzo: number){
+        this.flotta.push(new Macchina(this.flotta.length+1,marca, modello, tipologia, prezzo,[],""));
     }
 }

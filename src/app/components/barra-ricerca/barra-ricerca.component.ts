@@ -8,17 +8,24 @@ import { MacchinaService } from 'src/app/services/macchine.service';
 })
 export class BarraRicercaComponent {
   @Output() searchEvent = new EventEmitter();
-  @Output() eventoTest = new EventEmitter();
-
   
-  costruttori: string[];
+  costruttori: {
+    value: string,
+    index: boolean
+  }[] = [];
+  
   constructor(private service: MacchinaService) {
-    this.costruttori = this.service.GetBrands();
+    let x = this.service.GetBrands();
+    
+    for (let i = 0; i < x.length; i++) { 
+      this.costruttori.push({ index: false, value: x[i] });
+    }
   }
 
-
-  Search(chiave: string) { 
-    console.log(chiave);
-    return this.searchEvent.emit(chiave);
+  Search(valore: string, index: boolean) { 
+    this.costruttori.map(x => {
+      if (x.value === valore) x.index = !x.index;
+    })
+    return this.searchEvent.emit(this.costruttori);
   }
 }

@@ -3,7 +3,7 @@
     <ul class="dropdown-menu">
         <form>
             <ng-container *ngFor="let c of costruttori">
-                <li><input type="checkbox"(click)="Search(c)">{{c}}</li>
+                <li><input type="checkbox"(click)="Search(c.value, c.index)" >{{c.value}}</li>
             </ng-container>
         </form>
     </ul>

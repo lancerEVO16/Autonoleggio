@@ -15,8 +15,8 @@ export class ElencoMacchineComponent {
     this.macchine = this.service.GetAll();
     this.costruttori = this.service.GetBrands();
   }
-
-  Search(valore: string) { 
-    this.macchine = this.service.Search(valore); 
+  Search(oggetto: { value: string, index: boolean }[]) { 
+    this.macchine = this.service.Search(oggetto);
+    return this.macchine;
   }
 }

@@ -19,11 +19,11 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="name">Marchio:</label>
-                                        <input type="text" class="form-control" id="Marchio">
+                                        <input name="first" type="text" class="form-control" id="Marchio" [(ngModel)]="marca">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Modello:</label>
-                                        <input type="text" class="form-control" id="Modello ">
+                                        <input name="second" type="text" class="form-control" id="Modello " [(ngModel)]="modello">
                                     </div>
                                     <div class="form-group">
                                         <label for="item">Tipologia:</label>
@@ -36,21 +36,21 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Prezzo:</label>
-                                        <input type="number" class="form-control" id="Prezzo">
+                                        <input name="third" type="number" class="form-control" id="Prezzo" [(ngModel)]="prezzo">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Optionals (inserirli divisi da una virgola) :</label>
-                                        <input type="text" class="form-control" id="Optionals">
+                                        <input name="fourth" type="text" class="form-control" id="Optionals"[(ngModel)]="optional">
                                     </div>
                                 </form>
-                                <button class="button-secondary" (click)="creaMacchina()">Crea</button>
+                                <button class="button-secondary" (click)="creaMacchina(marca, modello, tipologia, prezzo)">Crea</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row border">
-                    
-                    
+
+
 
                     <table class="border ">
                         <tr class="border testo">
@@ -74,7 +74,7 @@
                                 <td class="border">{{m.prezzo | currency: "EUR"}}</td>
                                 <td class="border">{{m.optionals}}</td>
                                 <td class="border dim5"><button class="btn remove"><img class="img-fluid"
-                                    src="../../../assets/Img/trash.png" (click)="cancellaRiga(m.id)"></button>
+                                            src="../../../assets/Img/trash.png" (click)="cancellaRiga(m.id)"></button>
                                 </td>
                             </tr>
                         </ng-container>
