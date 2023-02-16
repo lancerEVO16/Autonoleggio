@@ -1,1 +1,34 @@
-<p>data-analysis works!</p>
+<!-- <app-ricerca (cercaEvent)="Cerca($event)"></app-ricerca> -->
+<h1>Gestionale auto</h1>
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-10 border">
+            <div class="row">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Immagine</th>
+                        <th>Marchio</th>
+                        <th>Modello</th>
+                        <th>Tipologia</th>
+                        <th>Prezzo</th>
+                        <th>Lista optionals</th>
+                        <th></th>
+                    </tr>
+                <ng-container *ngFor="let m of macchine">
+                    <tr>
+                    <td>{{m.id}}</td>
+                        <td><img [src]="'../../../assets/Img/' + m.immagine" alt=""></td>
+                        <td>{{m.costruttore}}</td>
+                        <td>{{m.modello}}</td>
+                        <td>{{m.tipologia}}</td>
+                        <td>{{m.prezzo | currency: "EUR"}}</td>
+                        <td>{{m.optionals}}</td>
+                        <td><img [src]="'../../../assets/Img/trash.png'" width="20%"></td>
+                    </tr>
+                </ng-container>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
