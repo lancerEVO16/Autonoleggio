@@ -24,7 +24,7 @@
                         <td>{{m.tipologia}}</td>
                         <td>{{m.prezzo | currency: "EUR"}}</td>
                         <td>{{m.optionals}}</td>
-                        <td><img [src]="'../../../assets/Img/trash.png'" width="20%"></td>
+                        <td><button class="btn remove"><img src = "../../../assets/Img/trash.png" (click) = "cancellaRiga(m.id)"></button></td>
                     </tr>
                 </ng-container>
             </table>
