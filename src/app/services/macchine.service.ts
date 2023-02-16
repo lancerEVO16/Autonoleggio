@@ -29,6 +29,8 @@ export class MacchinaService {
         let unique: string[] = [...new Set(brands)];
         return unique;
     }
-
+    GetById(id: number): Macchina {
+        return this.flotta[id-1];
+    }
     Search(valore: string): Macchina[] { return this.flotta.filter(l => l.costruttore.includes(valore)); }
 }
