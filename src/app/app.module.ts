@@ -14,6 +14,7 @@ import { DettaglioMacchinaComponent } from './components/dettaglio-macchina/dett
 import { MacchinaService } from './services/macchine.service';
 import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
 import { BarraRicercaComponent } from './components/barra-ricerca/barra-ricerca.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BarraRicercaComponent } from './components/barra-ricerca/barra-ricerca.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     MacchinaService

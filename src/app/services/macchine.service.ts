@@ -30,16 +30,38 @@ export class MacchinaService {
         return unique;
     }
 
-    GetModelli(){
-        let modelli: string[] = [];
-        for (let m of this.flotta) { modelli.push(m.modello) }
-        let unique: string[] = [...new Set(modelli)];
-        return unique;
+    // private filter = {
+    //     alfa: false,
+    //     bmw: false,
+    //     fiat: false
+    // }
+    // filteredProduct: Macchina[] = [];
+    // FilterChange() {
+    //     this.filteredProduct = this.flotta.filter(x =>
+    //         (x.costruttore == 'alfa' && this.filter.alfa)
+    //         || (x.costruttore == 'bmw' && this.filter.bmw)
+    //         || (x.costruttore == 'fiat' && this.filter.fiat)
+    //     );
+    // }
+
+    visualizzare: string[] = [];
+
+    Search(valore: string): Macchina[] {
+        console.log("search " + valore);
+        this.visualizzare.push(valore);
+        console.log("array di ricerca " + this.visualizzare);
+        console.log(this.flotta.filter(l => {
+            for (let i = 0; i < this.visualizzare.length; i++) {
+                if(l.costruttore === this.visualizzare[i]) 
+                {
+                    console.log(l.costruttore);
+                }
+            }
+        }));
+        return this.flotta.filter(l => l.costruttore.includes(valore));
     }
 
-    Search(valore: string): Macchina[] { 
-        console.log(valore);
-        console.log(this.flotta.filter(l => l.costruttore.includes(valore)));
-        return this.flotta.filter(l => l.costruttore.includes(valore)); 
-    }
+    // InputCar(brand: string, modello:string, tipologia: string, prezzo: number, optionals: string[]){
+    //     this.flotta.push(new Macchina((this.flotta[this.flotta.length - 1].id + 1), brand, modello, tipologia, prezzo, optionals, ""));
+    // }
 }
