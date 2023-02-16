@@ -9,10 +9,14 @@ import { MacchinaService } from 'src/app/services/macchine.service';
 export class BarraRicercaComponent {
   @Output() searchEvent = new EventEmitter();
 
-  valore = "";
+  // ischecked: boolean;
   costruttori: string[];
+  modelli: string[];
   constructor(private service: MacchinaService) {
     this.costruttori = this.service.GetBrands();
+    this.modelli = this.service.GetModelli();
   }
-  Search() { return this.searchEvent.emit(this.valore)}
+  Search(chiave: string) { 
+    return this.searchEvent.emit(chiave);
+  }
 }

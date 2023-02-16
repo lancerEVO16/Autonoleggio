@@ -1,4 +1,4 @@
-import { Component, Output ,EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Macchina } from 'src/app/models/macchina';
 import { MacchinaService } from 'src/app/services/macchine.service';
 
@@ -16,6 +16,7 @@ export class ElencoMacchineComponent {
     this.costruttori = this.service.GetBrands();
   }
 
-  Search(valore: string) { this.service.Search(valore); }
-
+  Search(valore: string) { 
+    this.macchine = this.service.Search(valore); 
+  }
 }

@@ -6,6 +6,33 @@
         <p>La macchina non esiste</p>
     </ng-template>
 </div> -->
-<h1>
-    Html dettaglio macchina
-</h1>
+
+<div class="card">
+    <div class="card-body row mx-0">
+        <div class="col-7" >
+            <img [src]="'../../../assets/Img/' + detMacchina?.immagine" alt="">
+        </div>
+        <div class="col-5">
+            <div class="row">
+                <h4 class="card-title">{{detMacchina?.costruttore}}</h4>
+            </div>
+            <div class="row">
+                <h5 class="card-title text-muted">{{detMacchina?.modello}}</h5>
+            </div>
+            <div class="row">
+                <h6 class="card-title text-muted">{{detMacchina?.tipologia}}</h6>
+            </div>
+            <ng-container *ngFor="let n of detMacchina?.optionals">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" value="false">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">{{n}}</label>
+                </div>
+            </ng-container>
+        </div>
+        <div class="row">
+            <div class="text-end">
+                {{detMacchina?.prezzo | currency : "EUR"}}
+            </div>
+        </div>
+    </div>
+</div>
