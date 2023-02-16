@@ -12,4 +12,9 @@ export class DataAnalysisComponent {
   constructor(private service: MacchinaService) {
     this.macchine = this.service.GetAll();
   }
+
+  cancellaRiga(id : number) {
+    let b = this.macchine.findIndex( m => m.id == id);
+    this.macchine.splice(b, 1);
+    }
 }

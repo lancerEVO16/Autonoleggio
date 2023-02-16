@@ -1,4 +1,5 @@
-<!-- <app-ricerca (cercaEvent)="Cerca($event)"></app-ricerca> -->
+<body>
+    <!-- <app-ricerca (cercaEvent)="Cerca($event)"></app-ricerca> -->
 <h1>Gestionale auto</h1>
 <div class="container-fluid p-5">
     <form class="form-inline">
@@ -19,28 +20,28 @@
       </form>
     <div class="row">
         <div class="col-10 border">
-            <div class="row">
-                <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Immagine</th>
-                        <th>Marchio</th>
-                        <th>Modello</th>
-                        <th>Tipologia</th>
-                        <th>Prezzo</th>
-                        <th>Lista optionals</th>
-                        <th></th>
+            <div class="row border">
+                <table class="border ">
+                    <tr class="border testo">
+                        <th class="border">ID</th>
+                        <th class="border">Immagine</th>
+                        <th class="border">Marchio</th>
+                        <th class="border">Modello</th>
+                        <th class="border">Tipologia</th>
+                        <th class="border">Prezzo</th>
+                        <th class="border">Lista optionals</th>
+                        <th class="border">Delete</th>
                     </tr>
                 <ng-container *ngFor="let m of macchine">
-                    <tr>
-                    <td>{{m.id}}</td>
-                        <td><img [src]="'../../../assets/Img/' + m.immagine" alt=""></td>
-                        <td>{{m.costruttore}}</td>
-                        <td>{{m.modello}}</td>
-                        <td>{{m.tipologia}}</td>
-                        <td>{{m.prezzo | currency: "EUR"}}</td>
-                        <td>{{m.optionals}}</td>
-                        <td><img [src]="'../../../assets/Img/trash.png'" width="20%"></td>
+                    <tr class="border testo">
+                    <td class="border">{{m.id}}</td>
+                        <td class="border"><img class="img-fluid" [src]="'../../../assets/Img/' + m.immagine" alt=""></td>
+                        <td class="border">{{m.costruttore}}</td>
+                        <td class="border">{{m.modello}}</td>
+                        <td class="border">{{m.tipologia}}</td>
+                        <td class="border">{{m.prezzo | currency: "EUR"}}</td>
+                        <td class="border">{{m.optionals}}</td>
+                        <td class="border"><button class="btn remove"><img src = "../../../assets/Img/trash.png" (click) = "cancellaRiga(m.id)"></button></td>
                     </tr>
                 </ng-container>
             </table>
@@ -48,3 +49,4 @@
         </div>
     </div>
 </div>
+</body>
