@@ -1,21 +1,28 @@
-img{
-    width: 40px; height: 40px;
+img {
+    width: 40px;
+    height: 40px;
 }
-.prova{
+
+.prova {
     padding-top: 10px;
-    
+
 }
-nav{
+
+nav {
     /*padding-left: 20px;
     padding-right: 30px;*/
     padding: 0px;
-    background-color: #952415!important;
+    background-color: transparent;
 }
-div{
+
+div {
     padding-left: 20px;
     padding-right: 30px;
-    background-color: #952415;
+    background-color: transparent;
+    ;
 }
-span{
-    background-color: #952415;
+
+span {
+    background-color: transparent;
+    ;
 }
