@@ -8,13 +8,17 @@ import { MacchinaService } from 'src/app/services/macchine.service';
   styleUrls: ['./data-analysis.component.css']
 })
 export class DataAnalysisComponent {
-  macchine : Macchina[] = [];
+  macchine: Macchina[] = [];
   constructor(private service: MacchinaService) {
     this.macchine = this.service.GetAll();
   }
 
-  cancellaRiga(id : number) {
-    let b = this.macchine.findIndex( m => m.id == id);
+  cancellaRiga(id: number) {
+    let b = this.macchine.findIndex(m => m.id == id);
     this.macchine.splice(b, 1);
-    }
+  }
+  creaMacchina() {
+    
+  }
+
 }
