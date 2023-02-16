@@ -1,3 +1,15 @@
 .dim20{
     width: 20%;
 }
+
+.dim5{
+    width: 5%;
+}
+
+.testo{
+    text-align: center;
+}
+
+body{
+    background-color:whitesmoke
+}
