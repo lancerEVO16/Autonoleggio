@@ -1,3 +1,10 @@
-<!-- <ng-container *ngFor="let c of costruttori">
-    <app-barra-ricerca (searchEvent)="Search()"></app-barra-ricerca>
-</ng-container> -->
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">Marca</button>
+    <ul class="dropdown-menu">
+        <form>
+            <ng-container *ngFor="let c of costruttori">
+                <li><input type="checkbox"(click)="Search(c)">{{c}}</li>
+            </ng-container>
+        </form>
+    </ul>
+</div>

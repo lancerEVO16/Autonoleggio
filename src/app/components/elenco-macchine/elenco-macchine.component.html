@@ -3,14 +3,15 @@
 <div class="container-fluid p-5">
     <div class="row">
         <div class="col-2 border">
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">Marca</button>
                 <ul class="dropdown-menu">
                     <ng-container *ngFor="let c of costruttori">
                         <li ><app-barra-ricerca></app-barra-ricerca></li>
                     </ng-container>
                 </ul>
-            </div>
+            </div> -->
+            <app-barra-ricerca (searchEvent)="Search($event)"></app-barra-ricerca>
         </div>
         <div class="col-10 border">
             <div class="row">
