@@ -5,24 +5,16 @@ img {
 
 .prova {
     padding-top: 10px;
-
 }
 
 nav {
-    /*padding-left: 20px;
-    padding-right: 30px;*/
-    padding: 0px;
     background-color: transparent;
 }
 
 div {
-    padding-left: 20px;
-    padding-right: 30px;
     background-color: transparent;
-    ;
 }
 
 span {
     background-color: transparent;
-    ;
 }
