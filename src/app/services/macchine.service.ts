@@ -30,5 +30,16 @@ export class MacchinaService {
         return unique;
     }
 
-    Search(valore: string): Macchina[] { return this.flotta.filter(l => l.costruttore.includes(valore)); }
+    GetModelli(){
+        let modelli: string[] = [];
+        for (let m of this.flotta) { modelli.push(m.modello) }
+        let unique: string[] = [...new Set(modelli)];
+        return unique;
+    }
+
+    Search(valore: string): Macchina[] { 
+        console.log(valore);
+        console.log(this.flotta.filter(l => l.costruttore.includes(valore)));
+        return this.flotta.filter(l => l.costruttore.includes(valore)); 
+    }
 }
