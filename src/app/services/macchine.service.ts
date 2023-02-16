@@ -60,8 +60,7 @@ export class MacchinaService {
         }));
         return this.flotta.filter(l => l.costruttore.includes(valore));
     }
-
-    // InputCar(brand: string, modello:string, tipologia: string, prezzo: number, optionals: string[]){
-    //     this.flotta.push(new Macchina((this.flotta[this.flotta.length - 1].id + 1), brand, modello, tipologia, prezzo, optionals, ""));
-    // }
+    GetById(id: number): Macchina {
+        return this.flotta[id-1];
+    }
 }

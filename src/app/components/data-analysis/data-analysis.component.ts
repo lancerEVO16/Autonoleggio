@@ -17,4 +17,8 @@ export class DataAnalysisComponent {
     let b = this.macchine.findIndex(m => m.id == id);
     this.macchine.splice(b, 1);
   }
+  creaMacchina() {
+    
+  }
+
 }

@@ -13,3 +13,16 @@
 body{
     background-color:whitesmoke
 }
+
+.dim100{
+    width: 100%;
+}
+
+.accordion-button{
+    background-color: whitesmoke;
+}
+
+.button-secondary{
+    border: none;
+    background:none;
+}
