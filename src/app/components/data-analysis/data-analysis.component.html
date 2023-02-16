@@ -5,6 +5,34 @@
     <div class="row">
         <div class="col-10 border">
             <div class="row border">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Marchio:</label>
+                    <input type="text" class="form-control" id="Marchio">
+                </div>
+                    <div class="form-group">
+                        <label for="name">Modello:</label>
+                    <input type="text" class="form-control" id="Modello ">
+                </div>
+                <div class="form-group">
+                    <label for="item">Tipologia:</label>
+                    <select class="form-control" id="Tipologia">
+                        <option value="Berlima">Berlina</option>
+                        <option value="Cabrio">Cabrio</option>
+                        <option value="Pulmino">Pulmino</option>
+                        <option value="SUV">SUV</option>
+                    </select>
+                </div>
+                    <div class="form-group">
+                        <label for="name">Prezzo:</label>
+                    <input type="number" class="form-control" id="Prezzo">
+                </div>
+                    <div class="form-group">
+                        <label for="name">Optionals (inserirli divisi da una virgola) :</label>
+                    <input type="text" class="form-control" id="Optionals">
+                </div>
+                </form>
+                <button class="btn-primary" (click) = "creaMacchina()">Crea</button>
                 <table class="border ">
                     <tr class="border testo">
                         <th class="border">ID</th>
