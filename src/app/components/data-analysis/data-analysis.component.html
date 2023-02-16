@@ -1,64 +1,86 @@
 <body>
     <!-- <app-ricerca (cercaEvent)="Cerca($event)"></app-ricerca> -->
-<h1>Gestionale auto</h1>
-<div class="container-fluid p-5">
-    <div class="row">
-        <div class="col-10 border">
-            <div class="row border">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Marchio:</label>
-                    <input type="text" class="form-control" id="Marchio">
+    <h1>Gestionale auto</h1>
+    <div class="container-fluid p-5">
+        <div class="row dim100">
+            <div class="col-10 border">
+                <div class="accordion">
+                    <div class="accordion">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Aggiungi Macchina
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+                            <div class="accordion-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name">Marchio:</label>
+                                        <input type="text" class="form-control" id="Marchio">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Modello:</label>
+                                        <input type="text" class="form-control" id="Modello ">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="item">Tipologia:</label>
+                                        <select class="form-control" id="Tipologia">
+                                            <option value="Berlima">Berlina</option>
+                                            <option value="Cabrio">Cabrio</option>
+                                            <option value="Pulmino">Pulmino</option>
+                                            <option value="SUV">SUV</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Prezzo:</label>
+                                        <input type="number" class="form-control" id="Prezzo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Optionals (inserirli divisi da una virgola) :</label>
+                                        <input type="text" class="form-control" id="Optionals">
+                                    </div>
+                                </form>
+                                <button class="button-secondary" (click)="creaMacchina()">Crea</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                    <div class="form-group">
-                        <label for="name">Modello:</label>
-                    <input type="text" class="form-control" id="Modello ">
+                <div class="row border">
+                    
+                    
+
+                    <table class="border ">
+                        <tr class="border testo">
+                            <th class="border">ID</th>
+                            <th class="border">Immagine</th>
+                            <th class="border">Marchio</th>
+                            <th class="border">Modello</th>
+                            <th class="border">Tipologia</th>
+                            <th class="border">Prezzo</th>
+                            <th class="border">Lista optionals</th>
+                            <th class="border">Delete</th>
+                        </tr>
+                        <ng-container *ngFor="let m of macchine">
+                            <tr class="border testo">
+                                <td class="border">{{m.id}}</td>
+                                <td class="border"><img class="img-fluid" [src]="'../../../assets/Img/' + m.immagine"
+                                        alt=""></td>
+                                <td class="border">{{m.costruttore}}</td>
+                                <td class="border">{{m.modello}}</td>
+                                <td class="border">{{m.tipologia}}</td>
+                                <td class="border">{{m.prezzo | currency: "EUR"}}</td>
+                                <td class="border">{{m.optionals}}</td>
+                                <td class="border dim5"><button class="btn remove"><img class="img-fluid"
+                                            src="../../../assets/Img/trash.png" (click)="cancellaRiga(m.id)"></button>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </table>
                 </div>
-                <div class="form-group">
-                    <label for="item">Tipologia:</label>
-                    <select class="form-control" id="Tipologia">
-                        <option value="Berlima">Berlina</option>
-                        <option value="Cabrio">Cabrio</option>
-                        <option value="Pulmino">Pulmino</option>
-                        <option value="SUV">SUV</option>
-                    </select>
-                </div>
-                    <div class="form-group">
-                        <label for="name">Prezzo:</label>
-                    <input type="number" class="form-control" id="Prezzo">
-                </div>
-                    <div class="form-group">
-                        <label for="name">Optionals (inserirli divisi da una virgola) :</label>
-                    <input type="text" class="form-control" id="Optionals">
-                </div>
-                </form>
-                <button class="btn-primary" (click) = "creaMacchina()">Crea</button>
-                <table class="border ">
-                    <tr class="border testo">
-                        <th class="border">ID</th>
-                        <th class="border">Immagine</th>
-                        <th class="border">Marchio</th>
-                        <th class="border">Modello</th>
-                        <th class="border">Tipologia</th>
-                        <th class="border">Prezzo</th>
-                        <th class="border">Lista optionals</th>
-                        <th class="border">Delete</th>
-                    </tr>
-                <ng-container *ngFor="let m of macchine">
-                    <tr class="border testo">
-                    <td class="border">{{m.id}}</td>
-                        <td class="border"><img class="img-fluid" [src]="'../../../assets/Img/' + m.immagine" alt=""></td>
-                        <td class="border">{{m.costruttore}}</td>
-                        <td class="border">{{m.modello}}</td>
-                        <td class="border">{{m.tipologia}}</td>
-                        <td class="border">{{m.prezzo | currency: "EUR"}}</td>
-                        <td class="border">{{m.optionals}}</td>
-                        <td class="border dim5"><button class="btn remove"><img class="img-fluid" src = "../../../assets/Img/trash.png" (click) = "cancellaRiga(m.id)"></button></td>
-                    </tr>
-                </ng-container>
-            </table>
             </div>
         </div>
     </div>
-</div>
 </body>
