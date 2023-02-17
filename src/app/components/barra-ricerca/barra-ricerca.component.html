@@ -1,10 +1,34 @@
-<div class="dropdown">
+<!-- <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">Tipologia</button>
     <ul class="dropdown-menu">
         <form>
             <ng-container *ngFor="let c of costruttori">
-                <li><input type="checkbox"(click)="Search(c.value, c.index)" >{{c.value}}</li>
+                <li><input type="checkbox" (click)="Search(c.value, c.index)">{{c.value}}</li>
             </ng-container>
         </form>
     </ul>
+</div> -->
+
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Tipologia
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ul>
+                    <form>
+                        <ng-container *ngFor="let c of costruttori">
+                            <li><input type="checkbox" (click)="Search(c.value, c.index)">{{c.value}}</li>
+                        </ng-container>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
