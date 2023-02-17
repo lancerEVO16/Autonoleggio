@@ -1,10 +1,10 @@
 div{
     background-color: rgb(100, 127, 127);
 }
-.prova:hover {
-	top: 0px;
-	left: 0px;
+app-macchina{
+	opacity : 0.8;
+}
+app-macchina:hover{
 	opacity: 1;
-	width: 400px;	
-	height: 180px;
+	color: blueviolet;;
 }
