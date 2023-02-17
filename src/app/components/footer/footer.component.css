@@ -1,6 +1,9 @@
 body{
-    background-color: antiquewhite;
+    background: linear-gradient( 
+        #152a2f, purple ,  blueviolet);
+        color: white;;
 }
-hr{
+hr{ 
     margin: 0;
 }
+a{color: white;}
