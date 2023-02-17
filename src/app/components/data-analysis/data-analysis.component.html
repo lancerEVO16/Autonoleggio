@@ -19,31 +19,41 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="name">Marchio:</label>
-                                        <input name="first" type="text" class="form-control" id="Marchio" [(ngModel)]="marca">
+                                        <input name="first" type="text" class="form-control" id="Marchio"
+                                            [(ngModel)]="marca">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Modello:</label>
-                                        <input name="second" type="text" class="form-control" id="Modello " [(ngModel)]="modello">
+                                        <input name="second" type="text" class="form-control" id="Modello "
+                                            [(ngModel)]="modello">
                                     </div>
                                     <div class="form-group">
-                                        <label for="item">Tipologia:</label>
+                                        <!-- <label for="item">Tipologia:</label>
                                         <select class="form-control" id="Tipologia">
-                                            <option value="Berlima">Berlina</option>
+                                            <option value="Berlina">Berlina</option>
                                             <option value="Cabrio">Cabrio</option>
                                             <option value="Pulmino">Pulmino</option>
                                             <option value="SUV">SUV</option>
-                                        </select>
+                                        </select> -->
+                                        <div class="form-group">
+                                            <label for="name">Tipologia:</label>
+                                            <input name="third" type="text" class="form-control" id="Prezzo"
+                                                [(ngModel)]="tipologia">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Prezzo:</label>
-                                        <input name="third" type="number" class="form-control" id="Prezzo" [(ngModel)]="prezzo">
+                                        <input name="fourth" type="number" class="form-control" id="Prezzo"
+                                            [(ngModel)]="prezzo">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Optionals (inserirli divisi da una virgola) :</label>
-                                        <input name="fourth" type="text" class="form-control" id="Optionals"[(ngModel)]="optional">
+                                        <input name="fifth" type="text" class="form-control" id="Optionals"
+                                            [(ngModel)]="optional">
                                     </div>
                                 </form>
-                                <button class="button-secondary" (click)="creaMacchina(marca, modello, tipologia, prezzo)">Crea</button>
+                                <button class="btn btn-secondary mt-3"
+                                    (click)="creaMacchina(marca, modello, tipologia, optional, prezzo)">Crea</button>
                             </div>
                         </div>
                     </div>
@@ -72,7 +82,13 @@
                                 <td class="border">{{m.modello}}</td>
                                 <td class="border">{{m.tipologia}}</td>
                                 <td class="border">{{m.prezzo | currency: "EUR"}}</td>
-                                <td class="border">{{m.optionals}}</td>
+                                <td class="border">
+                                    <ul>
+                                        <ng-container *ngFor="let x of m.optionals">
+                                            <li>{{x}}</li>
+                                        </ng-container>
+                                    </ul>
+                                </td>
                                 <td class="border dim5"><button class="btn remove"><img class="img-fluid"
                                             src="../../../assets/Img/trash.png" (click)="cancellaRiga(m.id)"></button>
                                 </td>
