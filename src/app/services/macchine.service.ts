@@ -25,7 +25,7 @@ export class MacchinaService {
 
     GetBrands(): string[] {
         let brands: string[] = [];
-        for (let m of this.flotta) { brands.push(m.costruttore) }
+        for (let m of this.flotta) { brands.push(m.tipologia) }
         let unique: string[] = [...new Set(brands)];
         return unique;
     }
@@ -38,7 +38,7 @@ export class MacchinaService {
         let display = this.flotta.filter(x => {
             let ret = false;
             filtro.forEach(g => {
-                if (x.costruttore === g.value) ret = true;
+                if (x.tipologia === g.value) ret = true;
             })
             return ret;
         })
