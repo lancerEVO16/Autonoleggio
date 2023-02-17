@@ -16,16 +16,16 @@ export class DataAnalysisComponent {
   marca = "";
   modello = "";
   tipologia = "";
-  prezzo = 0;
   optional = "";
+  prezzo = 0;
 
 
   cancellaRiga(id: number) {
     let b = this.macchine.findIndex(m => m.id == id);
     this.macchine.splice(b, 1);
   }
-  creaMacchina(marca: string, modello: string, tipologia: string, prezzo: number) {
-    return this.service.CreaMacchina(marca, modello, tipologia, prezzo);
+  creaMacchina(marca: string, modello: string, tipologia: string, optionals: string, prezzo: number) {
+    console.log(optionals.split(','));
+    return this.service.CreaMacchina(marca, modello, tipologia, optionals.split(","), prezzo);
   }
-
 }

@@ -25,20 +25,20 @@ export class MacchinaService {
 
     GetBrands(): string[] {
         let brands: string[] = [];
-        for (let m of this.flotta) { brands.push(m.costruttore) }
+        for (let m of this.flotta) { brands.push(m.tipologia) }
         let unique: string[] = [...new Set(brands)];
         return unique;
     }
 
 
-    Search(oggetto: {value: string, index: boolean}[]): Macchina[] {
+    Search(oggetto: { value: string, index: boolean }[]): Macchina[] {
         console.log(oggetto.filter(x => x.index));
         let filtro = oggetto.filter(x => x.index);
         if (filtro.length === 0) return this.flotta;
         let display = this.flotta.filter(x => {
             let ret = false;
             filtro.forEach(g => {
-                if (x.costruttore === g.value) ret = true;
+                if (x.tipologia === g.value) ret = true;
             })
             return ret;
         })
@@ -49,7 +49,7 @@ export class MacchinaService {
     GetById(id: number): Macchina {
         return this.flotta[id - 1];
     }
-    CreaMacchina(marca: string, modello: string, tipologia: string, prezzo: number){
-        this.flotta.push(new Macchina(this.flotta.length+1,marca, modello, tipologia, prezzo,[],"pngegg.png"));
+    CreaMacchina(marca: string, modello: string, tipologia: string, optionals: string[], prezzo: number) {
+        this.flotta.push(new Macchina(this.flotta.length + 1, marca, modello, tipologia, prezzo, optionals, "pngegg.png"));
     }
 }
