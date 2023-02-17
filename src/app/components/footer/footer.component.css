@@ -1,9 +1,9 @@
-body{
+.sfondo{
     background: linear-gradient( 
         #152a2f, purple ,  blueviolet);
-        color: white;;
+        color: white;
 }
-hr{ 
+hr{
     margin: 0;
 }
 a{color: white;}
