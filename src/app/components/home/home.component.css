@@ -18,3 +18,7 @@ background-position: center;
     outline-style: solid;
     box-shadow: 0 0 0 2px #000000;
 }
+button{
+    height: 40px;
+    width: 250px;
+}
