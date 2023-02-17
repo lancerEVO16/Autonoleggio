@@ -1,7 +1,24 @@
 body{
-background-image: url("https://cdn.ferrari.com/cms/network/media/img/resize/5de7923a91756c07f10b1720-ferrari-f40-1987-intro-share?width=1080");
+background-image: url("https://cdn.motor1.com/images/mgl/Z27QK/s1/2019-bmw-m850i-xdrive-cabriolet.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
 .prova{
     padding-bottom: 60px;
     padding-left: 100px;
+}
+.prova2:active {
+    background-color: #ffbf00;
+}
+.prova2:hover {
+    background-color: #002ead;
+    transition: 0.2s;
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 2px #000000;
+}
+button{
+    height: 40px;
+    width: 250px;
 }

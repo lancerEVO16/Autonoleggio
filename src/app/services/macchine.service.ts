@@ -50,6 +50,6 @@ export class MacchinaService {
         return this.flotta[id - 1];
     }
     CreaMacchina(marca: string, modello: string, tipologia: string, prezzo: number){
-        this.flotta.push(new Macchina(this.flotta.length+1,marca, modello, tipologia, prezzo,[],""));
+        this.flotta.push(new Macchina(this.flotta.length+1,marca, modello, tipologia, prezzo,[],"pngegg.png"));
     }
 }

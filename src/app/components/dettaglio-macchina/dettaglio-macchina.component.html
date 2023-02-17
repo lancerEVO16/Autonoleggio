@@ -22,12 +22,16 @@
             <div class="row">
                 <h6 class="card-title text-muted">{{detMacchina?.tipologia}}</h6>
             </div>
-            <ng-container *ngFor="let n of detMacchina?.optionals">
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" value="false">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">{{n}}</label>
-                </div>
-            </ng-container>
+            <br>
+            <br>
+            Optionals di cui l'auto dispone
+                <ng-container *ngFor="let n of detMacchina?.optionals">
+                    <div class="">
+                            <li>{{n}}</li>
+                    </div>
+                </ng-container>
+            
+            
         </div>
         <div class="row">
             <div class="text-end">
